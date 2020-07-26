@@ -27,7 +27,7 @@ Unfortunately, I couldn't recreate the fantastic "voice recognition" part of the
 The vocabulary contains words and sentences as:
 * simplified Chinese, 
 * pin1yin1 with number
-* pinyin with accent pīnyīn
+* pīnyīn with accent 
 * english
 * tag list
 

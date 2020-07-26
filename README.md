@@ -59,5 +59,7 @@ This companion quiz insists in:
 ## Sources
 * https://ankiweb.net/shared/info/1418832623
 * https://github.com/chanind/hanzi-writer-data
+* success gif made with... powerpoint
 
+![success gif](/res/images/JquizAnimationSuccessMoyenStandard.gif)
 

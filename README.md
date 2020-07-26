@@ -1,5 +1,5 @@
 # Unofficial-Chineseskill-Companion-Quiz
-This unofficial quiz can played in a browser. It completes nicely the Chineseskill app by working on:
+This unofficial quiz can be played in a browser. It completes nicely the Chineseskill app by working on:
 * writing the Chinese characters
 * and on the tones remembering 
   * (writing sentences in pin1yin1 with numbers has been erased from recent versions of Chineseskill app. Here you can go on practicing)

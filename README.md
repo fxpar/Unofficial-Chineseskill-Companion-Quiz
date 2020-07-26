@@ -52,6 +52,7 @@ This companion quiz insists in:
 * [ ] have a timed answer
 * [ ] make random question work
 * [ ] correct the first three questions with a "v" instead of "ü"
+* [ ] questions with sentence start with a capital (need to be more coherent)
 * [ ] add setting to show / hide Hints
 
 

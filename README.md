@@ -1,7 +1,7 @@
 # Unofficial-Chineseskill-Companion-Quiz
 Offline quiz, in browser, chinese characters revision from the chineseskill learning app.
 
-![simple javascript](https://img.shields.io/badge/javascript-simple-blue) ![simple javascript](https://img.shields.io/badge/material%20design-lite-ff69b4)
+![simple javascript](https://img.shields.io/badge/javascript-simple-blue) ![simple javascript](https://img.shields.io/badge/material%20design-lite-ff69b4) ![noto](https://img.shields.io/badge/Noto-font-orange)
 
 [Download the latest release](https://github.com/fxpar/Unofficial-Chineseskill-Companion-Quiz/releases)
 (because I had to zip a part of this source code to comply to github file size limits)
@@ -56,6 +56,8 @@ This companion quiz insists in:
 * [ ] questions with sentence start with a capital (need to be more coherent)
 * [ ] add setting to show / hide Hints
 * [ ] add image for "add to home screen" shorcut
+* [ ] upload release for "online" with all files on jsdelivr or cdn
+* [ ] add online demo on my website (with all files distant)
 
 
 ## Sources

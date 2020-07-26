@@ -40,12 +40,7 @@ The vocabulary contains 900 words and sentences as:
 
 ### Types of questions
 From one word or sentence, the quiz can create different type of questions:
-* __Cue__: simplified; __expected answer__: english (hint:pin1yin1)
-* __Cue__: english; __expected answer__: pin1yin1 (hint:simplified Chinese)
-* __Cue__: simplified; __expected answer__: pin1yin1 (hint: english)
-* __Cue__: english; __expected answer__: drawing simplified (hint: pin1yin1)
-* __Cue__: pin1yin1; __expected answer__: drawing simplified (hint: english)
-The form is the question is currently random. Maybe in the future I will create the settings for the user to choose a specific type of questions.
+
 
 Type | Cue | Expected Answer | Hint 
 -----|-----|-----------------|-----
@@ -54,6 +49,9 @@ Type | Cue | Expected Answer | Hint
 3 | simplified | pin1yin1 | english 
 4 | english|drawing simplified | pin1yin1 
 5 | pin1yin1|drawing simplified | english 
+
+The form is the question is currently random. Maybe in the future I will create the settings for the user to choose a specific type of questions.
+
 
 
 ![Question Settings](/screenshots/questionSettings.png)

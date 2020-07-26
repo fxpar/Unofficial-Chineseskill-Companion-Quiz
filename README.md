@@ -74,9 +74,10 @@ The vocabulary contains words and sentences as:
 
 
 ## Sources
-* https://ankiweb.net/shared/info/1418832623
-* https://github.com/chanind/hanzi-writer-data
-* success gif made with... powerpoint
+* https://ankiweb.net/shared/info/1418832623 ([Shared Deck Licence](https://ankiweb.net/account/terms))
+* https://github.com/chanind/hanzi-writer-data ([licence Arphic](https://github.com/chanind/hanzi-writer-data/blob/master/ARPHICPL.TXT))
+* https://getmdl.io/index.html ([licence Apache2.0](https://github.com/google/material-design-lite/blob/mdl-1.x/LICENSE))
+* success gif: homemade with... PowerPoint
 
 ![success gif](/res/images/JquizAnimationSuccessMoyenStandard.gif)
 

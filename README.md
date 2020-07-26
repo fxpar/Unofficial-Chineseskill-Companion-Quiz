@@ -1,3 +1,5 @@
+![simple javascript](https://img.shields.io/badge/javascript-simple-blue) ![simple javascript](https://img.shields.io/badge/material%20design-lite-ff69b4) ![noto](https://img.shields.io/badge/Noto-font-orange) ![hanzi-writer-data](https://img.shields.io/badge/Hanzi%20Writer-data-green)
+
 # Unofficial-Chineseskill-Companion-Quiz
 This unofficial quiz can be played in a browser. It completes nicely the Chineseskill app by working on:
 * writing the Chinese characters
@@ -5,7 +7,8 @@ This unofficial quiz can be played in a browser. It completes nicely the Chinese
   * (writing sentences in pin1yin1 with numbers has been erased from recent versions of Chineseskill app. Here you can go on practicing)
 You can choose wich level you want to practice.
 
-![simple javascript](https://img.shields.io/badge/javascript-simple-blue) ![simple javascript](https://img.shields.io/badge/material%20design-lite-ff69b4) ![noto](https://img.shields.io/badge/Noto-font-orange) ![hanzi-writer-data](https://img.shields.io/badge/Hanzi%20Writer-data-green)
+Unfortunately, I couldn't recreate the fantastic "voice recognition" part of the original Chineseskill app (which has also been cut from recent versions).
+
 
 [Download the latest release](https://github.com/fxpar/Unofficial-Chineseskill-Companion-Quiz/releases)
 (because I had to zip a part of this source code to comply to github file size limits)
@@ -19,13 +22,6 @@ You can choose wich level you want to practice.
 
 ![Image of Yaktocat](https://github.com/fxpar/Unofficial-Chineseskill-Companion-Quiz/blob/master/screenshots/screen_20200726_134536.png)
 
-
-## Purpose
-The questions about pin1yin1 characters have been removed from the new version of the Chineseskill app. 
-
-This companion quiz insists in:
-* pinyin with number tones
-* character stroke questions
 
 ## Help
 The vocabulary contains words and sentences as:

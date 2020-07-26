@@ -47,6 +47,15 @@ From one word or sentence, the quiz can create different type of questions:
 * __Cue__: pin1yin1; __expected answer__: drawing simplified (hint: english)
 The form is the question is currently random. Maybe in the future I will create the settings for the user to choose a specific type of questions.
 
+Type | Cue | Expected Answer | Hint 
+-----|-----|-----------------|-----
+1 | simplified | english |pin1yin1
+2 | english | pin1yin1 | simplified Chinese 
+3 | simplified | pin1yin1 | english 
+4 | english|drawing simplified | pin1yin1 
+5 | pin1yin1|drawing simplified | english 
+
+
 ![Question Settings](/screenshots/questionSettings.png)
 
 * **Learning mode**: shows the answer when asking the question

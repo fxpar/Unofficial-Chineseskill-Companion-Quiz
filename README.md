@@ -11,7 +11,7 @@ Unfortunately, I couldn't recreate the fantastic "voice recognition" part of the
 
 
 [Download the latest release](https://github.com/fxpar/Unofficial-Chineseskill-Companion-Quiz/releases)
-(because I had to zip a part of this source code to comply to github file size limits)
+(because I had to zip a part of this source code to comply with github file size limits)
 
 ## Supported browsers
 * PC Chrome

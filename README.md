@@ -1,5 +1,5 @@
 # Unofficial-Chineseskill-Companion-Quiz
-Offline quiz, in browser, chinese characters revision from the chineseskill learning app.
+This is the **Offline** quiz, in browser, chinese characters revision from the chineseskill learning app.
 
 ![simple javascript](https://img.shields.io/badge/javascript-simple-blue) ![simple javascript](https://img.shields.io/badge/material%20design-lite-ff69b4) ![noto](https://img.shields.io/badge/Noto-font-orange) ![hanzi-writer-data](https://img.shields.io/badge/Hanzi%20Writer-data-green)
 

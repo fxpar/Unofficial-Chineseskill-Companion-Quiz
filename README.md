@@ -55,6 +55,7 @@ This companion quiz insists in:
 * [ ] correct the first three questions with a "v" instead of "ü"
 * [ ] questions with sentence start with a capital (need to be more coherent)
 * [ ] add setting to show / hide Hints
+* [ ] add image for "add to home screen" shorcut
 
 
 ## Sources

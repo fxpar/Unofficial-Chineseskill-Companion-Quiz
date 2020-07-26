@@ -6,6 +6,10 @@ Offline quiz, in browser, chinese characters revision from the chineseskill lear
 [Download the latest release](https://github.com/fxpar/Unofficial-Chineseskill-Companion-Quiz/releases)
 (because I had to zip a part of this source code to comply to github file size limits)
 
+# Supported browsers
+* PC Chrome
+* PC Firefox
+* Android tablet Firefox BETA (didn'work on my android Firefox 68.10.1, really needs "Firefox BETA")
 
 ![Image of Yaktocat](https://github.com/fxpar/Unofficial-Chineseskill-Companion-Quiz/blob/master/screenshots/screen_20200726_134536.png)
 

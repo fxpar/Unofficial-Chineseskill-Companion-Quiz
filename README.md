@@ -1,6 +1,8 @@
 # Unofficial-Chineseskill-Companion-Quiz
 Offline quiz, in browser, chinese characters revision from the chineseskill learning app.
 
+![simple javascript](https://img.shields.io/badge/javascript-simple-blue)
+
 [Download the latest release](https://github.com/fxpar/Unofficial-Chineseskill-Companion-Quiz/releases)
 (because I had to zip a part of this source code to comply to github file size limits)
 

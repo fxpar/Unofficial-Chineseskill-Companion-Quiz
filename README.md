@@ -24,6 +24,19 @@ This companion quiz insists in:
 * character stroke questions
 
 ## Help
+The vocabulary contains words and sentences as:
+* simplified Chinese, 
+* pin1yin1 with number
+* pinyin with accent pīnyīn
+* english
+* tag list
+
+### Questions can be of the form:
+* Cue: simplified; expected answer: english (hint:pin1yin1)
+* Cue: english; expected answer: pin1yin1 (hint:simplified Chinese)
+* Cue: simplified; expected answer: pin1yin1 (hint: english)
+* Cue: english; expected answer: drawing simplified (hint: pin1yin1)
+* Cue: pin1yin1; expected answer: drawing simplified (hint: english)
 
 ![Question Settings](/screenshots/questionSettings.png)
 

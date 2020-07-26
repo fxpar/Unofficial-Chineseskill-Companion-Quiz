@@ -9,7 +9,9 @@ Offline quiz, in browser, chinese characters revision from the chineseskill lear
 ## Supported browsers
 * PC Chrome
 * PC Firefox
-* Android tablet Firefox BETA (didn'work on my android Firefox 68.10.1, really needs "Firefox BETA")
+* Android tablet Firefox BETA 
+** (didn'work on my android Firefox 68.10.1, really needs "Firefox BETA")
+** takes 10 seconds to load the 900 questions and the 30mo file for characters stroke order
 
 ![Image of Yaktocat](https://github.com/fxpar/Unofficial-Chineseskill-Companion-Quiz/blob/master/screenshots/screen_20200726_134536.png)
 

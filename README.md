@@ -48,9 +48,10 @@ This companion quiz insists in:
 * **tags**: check the tags that you want to be interrogated
 
 ## Todo
-[ ] have a setting to decide timer after for getting to the next question
-[ ] have a timed answer
-[ ] make random question work
+* [ ] have a setting to decide timer after for getting to the next question
+* [ ] have a timed answer
+* [ ] make random question work
+* [ ] correct the first three questions with a "v" instead of "ü"
 
 
 ## Sources

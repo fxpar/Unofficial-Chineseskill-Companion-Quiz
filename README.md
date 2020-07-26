@@ -27,9 +27,9 @@ This companion quiz insists in:
 
 ![Question Settings](/screenshots/questionSettings.png)
 
-* [x] **Learning mode**: shows the answer when asking the question
-* [x] **click after wrong**: when you make a mistake, you can choose to click to go to the next question, instead of having the 5 second timer
-* [x] **random**: does not actually work (sorry!)
+* **Learning mode**: shows the answer when asking the question
+* **click after wrong**: when you make a mistake, you can choose to click to go to the next question, instead of having the 5 second timer
+* [ ] **random**: does not actually work (sorry!)
 
 
 ![Hanzi Character Settings](/screenshots/hanziCharacterSettings.png)

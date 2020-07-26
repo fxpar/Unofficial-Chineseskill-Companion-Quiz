@@ -48,6 +48,7 @@ This companion quiz insists in:
 * **tags**: check the tags that you want to be interrogated
 
 ## Todo
+* [ ] move question.js, quiz.js and hanzi-writer-short.js in res
 * [ ] have a setting to decide timer after for getting to the next question
 * [ ] have a timed answer
 * [ ] make random question work

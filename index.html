@@ -16,9 +16,9 @@
 
 	<link rel="stylesheet" href="./res/styles/material.min.css">
 	<link rel="stylesheet" type="text/css" href="./res/styles/styles.css" />
-	<script src="./hanzi-writer-data-short.js"></script>
-	<script src="questions.js"></script>
-	<script src="quiz.js"></script>
+	<script src="./res/hanzi-writer-data-short.js"></script>
+	<script src="./res/questions.js"></script>
+	<script src="./res/quiz.js"></script>
 	<script src="./res/scripts/hanzi-writer.min.js"></script>
 	<script src="./res/scripts/hanzi-writer.min.js"></script>
 	<script src="./res/scripts/material.min.js"></script>
@@ -269,11 +269,14 @@ layout.MaterialLayout.toggleDrawer();">change category</button>
 
 								<div id = "progressbar1" class = "mdl-progress mdl-js-progress"></div>
 								
-								
-									<div class="mdl-card__supporting-text" style="text-align:right">
-										<div id="username">username</div>
-										<div id="qlevel">qlevel</div>
+								<div class="mdl-card__supporting-text" style="text-align:left">
+										<audio id="audio"> <source id="audioSource" src="" type="audio/mpeg"></audio>
+										<i class="material-icons" onclick="document.getElementById('audio').play();">music_note</i>
+										<div id="username" style="text-align:right">username</div>
+										<div id="qlevel" style="text-align:right">qlevel</div>
 									</div>
+									
+								
 									
 								
 								

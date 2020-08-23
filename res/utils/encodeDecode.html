@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>title</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="robots" content="noindex,nofollow" />
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+
+		<script>
+
+	function readTextarea(){
+		var txtSrc = document.getElementById('t1');
+		var lines = txtSrc.value.split('\n');    // lines is an array of strings
+		var result='';
+
+		// Loop through all lines
+		for (var j = 0; j < lines.length; j++) {
+		  //console.log('Line ' + j + ' is ' + lines[j]);
+		  result += decode(lines[j])+'\n';
+		}
+		document.getElementById("t2").value = result;
+	}
+
+
+/* simple decode using atob 
+ * onerror use decode2
+*/
+
+	function decode(str){
+		try {
+		  var decoded = decodeURIComponent(escape(atob(str)));
+		  return decoded;
+		}
+		catch(err) {
+		  //console.log("Decode: "+ err.message);
+		  return decodeURIComponent(escape(atob(decode2(str))));
+		  
+		}
+	}
+	
+	/*
+	 *	replace the A by Z and a by z
+	 *	replace the Z by A and z by a
+	 *	replace other letter by the previous one
+	 *	ex: C become B; n become m...
+	 *	don't replace numbers
+	 */
+
+	function decode2(str){
+	//console.log("string to decode2:"+str);
+		try {
+			strArr = [];
+			for (var i = 0; i < str.length; i++) {
+				var charAt = str.charAt(i);
+				if (charAt == 'a') {
+					strArr.push('z');
+				} else if (charAt == 'A') {
+					strArr.push('Z');
+				} else if ((charAt <= 'a' || charAt > 'z') && (charAt <= 'A' || charAt > 'Z')) {
+					strArr.push(charAt);
+				} else {
+					var cp = charAt.codePointAt(0);
+					//console.log("cp:"+charAt+":"+cp);
+					if (cp < 127) {
+						//console.log("cp-1:"+String.fromCodePoint(cp - 1));
+						strArr.push( String.fromCodePoint(cp - 1));
+					}
+				}
+			}
+			//console.log(strArr);
+			return strArr.join("");
+		}
+		catch(err) {
+			console.log("DECODE2: "+ err.message);
+		  //return;
+		}
+	
+	}
+	
+
+				</script>
+
+			</head>
+
+			<body>
+
+
+				<textarea id="t1" rows="20">
+55T35Mr6
+5Mr65sDS
+54jy5bX9
+5qfm5qzt
+Y19gY18=
+44DD
+5Mr6
+5bXa5Mr6
+
+
+
+55S3
+5Lq6
+5aWz
+5a2p
+5bmz
+5p6c
+6L+Z
+
+				</textarea>
+				<textarea id="t2" rows="20"></textarea>
+				<button onclick="readTextarea();">Décoder T1</button>
+				<button onclick="document.getElementById('t2').value = '';">Clear T2</button>
+
+<div>expected result: 
+<pre>
+男人
+人民
+爱好
+日本
+c_`c_
+。
+人
+女人
+
+
+
+男
+人
+女
+孩
+平
+果
+这
+</pre></div>
+
+			</body>
+		</html>
+		

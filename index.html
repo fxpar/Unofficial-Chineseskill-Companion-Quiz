@@ -1,372 +1,392 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<title>title</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<meta name="description" content="Simple quiz de vocabulaire en javascript">
-	<meta name="theme-color" content="#3F51B5" />
-	<!-- PROGRESSIVE WEBAPP manifest -->
-	<link rel="manifest" href="./res/manifest.json">
-	<!-- PROGRESSIVE WEBAPP alternative for Safari -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="JQuiz">
-<link rel="apple-touch-icon" href="./res/images/icon-152x152.png">
-
-	<link rel="stylesheet" href="./res/styles/material.min.css">
-	<link rel="stylesheet" type="text/css" href="./res/styles/styles.css" />
-	<script src="./res/hanzi-writer-data-short.js"></script>
-	<script src="./res/questions.js"></script>
-	<script src="./res/quiz.js"></script>
-	<script src="./res/scripts/hanzi-writer.min.js"></script>
-	<script src="./res/scripts/hanzi-writer.min.js"></script>
-	<script src="./res/scripts/material.min.js"></script>
-	<style>
-		@font-face {
+	<head>
+		<title>title</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="description" content="Simple quiz de vocabulaire en javascript"/>
+		<meta name="theme-color" content="#3F51B5" />
+		<!-- PROGRESSIVE WEBAPP manifest -->
+		<link rel="manifest" href="./res/manifest.json">
+		<!-- PROGRESSIVE WEBAPP alternative for Safari -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta name="apple-mobile-web-app-title" content="JQuiz"/>
+		<link rel="apple-touch-icon" href="./res/images/icon-152x152.png">
+		
+		<link rel="stylesheet" href="./res/styles/material.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./res/styles/styles.css" />
+		<script src="./res/hanzi-writer-data-short.js"></script>
+		<script src="./res/questions.js"></script>
+		<script src="./res/quiz.js"></script>
+		<script src="./res/scripts/hanzi-writer.min.js"></script>
+		<script src="./res/scripts/hanzi-writer.min.js"></script>
+		<script src="./res/scripts/material.min.js"></script>
+		<style>
+			@font-face {
 			font-family: "Material Icons";
 			src: url('./res/fonts/MaterialIcons-Regular.ttf');
-		}
-		@font-face {
+			}
+			@font-face {
 			font-family: "NotoSerifSC-Regular";
 			src: url('./res/fonts/NotoSerifSC-Regular.otf');
-		}
-		
-		.mdl-layout-title {
+			}
+			
+			.mdl-layout-title {
 			//margin-top:20px;
 			//margin-bottom:20px;
-		}
-		.hidden {display:none}
-	</style>
-	<script type="text/javascript"> 
-
+			}
+			.hidden {display:none}
+			.graybox {
+			background-color:#ddd;
+			}
+		</style>
+		<script type="text/javascript"> 
+			
+			
+		</script>
+	</head>
 	
-	</script>
-</head>
-
-<body onload="quiz = new Quiz();">
-
-<!-- *************************
-	MATERIAL DESIGN HEADER
-	with Menus
-	**************************	-->	
-<div class="mdl-layout mdl-js-layout  mdl-layout--fixed-header ">
-				<header class=" mdl-layout__header ">
-					<div class="mdl-layout__header-row">
-						<!-- Title -->
-						<span class="mdl-layout-title"><a style="color:white; text-decoration:none" href="index.php">Quiz</a></span>
-						<!-- Add spacer, to align navigation to the right -->
+	<body onload="quiz = new Quiz();">
+		
+		<!-- *************************
+			MATERIAL DESIGN HEADER
+			with Menus
+		**************************	-->	
+		<div class="mdl-layout mdl-js-layout  mdl-layout--fixed-header ">
+			<header class=" mdl-layout__header ">
+				<div class="mdl-layout__header-row">
+					<!-- Title -->
+					<span class="mdl-layout-title"><a style="color:white; text-decoration:none" href="index.php">Quiz</a></span>
+					<!-- Add spacer, to align navigation to the right -->
+					<div class="mdl-layout-spacer"></div>
+					<!-- Navigation. We hide it in small screens. -->
+					
+					
+					
+					
+					
+				</div>
+			</header>
+			<div class="mdl-layout__drawer">
+				<span class="mdl-layout-title">Quiz Menu</span>
+				<nav class="mdl-navigation">
+					
+					<!-- *************************
+						A FEW BUTTONS
+					**************************	-->	
+					
+					
+					<div>&nbsp;</div>
+					
+					<button  type="button"  value="Submit" class="mdl-button mdl-js-button  mdl-button--colored hidden"  onclick="var layout = document.querySelector('.mdl-layout');
+					layout.MaterialLayout.toggleDrawer();">change category</button>
+					<button  type="button"  value="Submit" class="mdl-button mdl-js-button  mdl-button--colored"  onclick="quiz.restart(); ">restart</button>
+					<button  type="button"  value="Submit" class="mdl-button mdl-js-button  mdl-button--colored"  onclick="location.reload(); ">reload</button>
+					
+					
+					<ul class="demo-list-control mdl-list">
+						
+						<li class="mdl-list__item hidden">
+							<span class="mdl-list__item-primary-content">
+								<i class="material-icons  mdl-list__item-icon">person</i>
+								Simplified-English
+							</span>
+							<span class="mdl-list__item-secondary-action">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Simplified-English">
+									<input type="checkbox" id="Simplified-English" class="mdl-checkbox__input" checked />
+								</label>
+							</span>
+						</li>
+						<li class="mdl-list__item hidden" >
+							<span class="mdl-list__item-primary-content">
+								<i class="material-icons  mdl-list__item-icon">translate</i>
+								Simplified-Pin1yin1
+							</span>
+							<span class="mdl-list__item-secondary-action">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Simplified-Pin1yin1">
+									<input type="checkbox" id="Simplified-Pin1yin1" class="mdl-checkbox__input" checked />
+								</label>
+							</span>
+						</li>
+						<li class="mdl-list__item  hidden">
+							<span class="mdl-list__item-primary-content">
+								<i class="material-icons  mdl-list__item-icon">translate</i>
+								English-Pin1yin1
+							</span>
+							<span class="mdl-list__item-secondary-action">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="English-Pin1yin1">
+									<input type="checkbox" id="English-Pin1yin1" class="mdl-checkbox__input" checked />
+								</label>
+							</span>
+						</li>
+						<li class="mdl-list__item mdl-menu__item--full-bleed-divider hidden">
+							<span class="mdl-list__item-primary-content">
+								<i class="material-icons  mdl-list__item-icon">translate</i>
+								Pin1yin1
+							</span>
+							<span class="mdl-list__item-secondary-action">
+								<label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-2">
+									<input type="radio" id="list-option-2" class="mdl-radio__button" name="options" value="1" checked />
+								</label>
+							</span>
+						</li>
+						
+						<li class="mdl-list__item ">
+							<div class="mdl-layout-title">Question Settings</div>
+						</li>
+						
+						<li class="mdl-list__item ">
+							<span class="mdl-list__item-primary-content">
+								<i class="material-icons  mdl-list__item-icon">school</i>
+								learning mode
+							</span>
+							<span class="mdl-list__item-secondary-action">
+								<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="learning-mode">
+									<input type="checkbox" id="learning-mode" class="mdl-switch__input" checked />
+								</label>
+							</span>
+						</li>
+						
+						<li class="mdl-list__item ">
+							<span class="mdl-list__item-primary-content">
+								<i class="material-icons  mdl-list__item-icon">touch_app</i>
+								click after wrong
+							</span>
+							<span class="mdl-list__item-secondary-action">
+								<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="clickAfterWrong">
+									<input type="checkbox" id="clickAfterWrong" class="mdl-switch__input" checked />
+								</label>
+							</span>
+						</li>
+						<li class="mdl-list__item mdl-menu__item--full-bleed-divider">
+							<span class="mdl-list__item-primary-content">
+								<i class="material-icons  mdl-list__item-icon">shuffle</i>
+								Random
+							</span>
+							<span class="mdl-list__item-secondary-action">
+								<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="randomQuestions">
+									<input type="checkbox" id="randomQuestions" class="mdl-switch__input"  />
+								</label>
+							</span>
+						</li>
+						
+						<li class="mdl-list__item ">
+							<div class="mdl-layout-title">Character questions</div>
+						</li>
+						<li class="mdl-list__item ">
+							<span class="mdl-list__item-primary-content">
+								<i class="material-icons  mdl-list__item-icon">rounded_corner</i>
+								show outline
+							</span>
+							<span class="mdl-list__item-secondary-action">
+								<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="showOutline">
+									<input type="checkbox" id="showOutline" class="mdl-switch__input" />
+								</label>
+							</span>
+						</li>
+						
+						
+						
+						<li class="mdl-list__item ">
+							<span class="mdl-list__item-primary-content">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%;" >
+									<select class="mdl-textfield__input" id="characterQuestion" name="characterQuestion">
+										<option value="first" selected>only first</option>
+										<option value="all">All characters</option>
+										<option value="last">only last</option>
+										<option value="random">Random character</option>
+									</select>
+									<label class="mdl-textfield__label" for="characterQuestion" >Character Questions</label>
+								</div>
+							</span>
+						</li>
+						
+						<li class="mdl-list__item mdl-menu__item--full-bleed-divider">
+							<span class="mdl-list__item-primary-content">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%;" >
+									<select class="mdl-textfield__input" id="characterSize" name="characterSize" onchange="changeCharacterSize(this.value);">
+										<option value="150" selected>150</option>
+										<option value="200">200</option>
+										<option value="250">250</option>
+										<option value="300">300</option>
+										<option value="350">350</option>
+									</select>
+									<label class="mdl-textfield__label" for="characterSize" >Character Square Size</label>
+								</div>
+							</span>
+						</li>
+						
+						
+						
+						
+						<li class="mdl-list__item ">
+							<div class="mdl-layout-title">Questions</div>
+						</li>
+						
+						
+						<li class="mdl-list__item ">
+							<span class="mdl-chip" >
+								<span id="questionsListLength" class="mdl-chip__text" >Questions</span>
+							</span>
+						</li>
+						<div>&nbsp;</div>
+						
+						
+						<li class="mdl-list__item ">
+							<label class="mdl-slider__label" for="questionSlider" >Start at </label>
+						</li>
+						<li class="mdl-list__item ">
+							
+							
+							<input id="questionSlider" class="mdl-slider mdl-js-slider" type="range"
+							min="0" max="100" value="0" tabindex="0"  
+							oninput="quiz.sliderChange(this.value);" 
+							onchange="quiz.sliderChange(this.value);"  >
+							
+							<div class="mdl-badge mdl-badge--overlap " data-badge="0" id="questionSliderChip" style="margin-right:10px"></div>
+						</li>
+					</ul>
+					
+					
+					
+					<ul id="level-list" class="demo-list-control mdl-list hidden">
+					</ul>
+					
+					<ul id="tag-list" class="demo-list-control mdl-list">
+					</ul>
+					
+					
+					
+				</nav>
+			</div>
+			<main class="mdl-layout__content">
+				<div class="page-content">
+					<div class="mdl-grid" >
 						<div class="mdl-layout-spacer"></div>
-						<!-- Navigation. We hide it in small screens. -->
-
-						
-						
-						
-						
-					</div>
-				</header>
-				  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Quiz Menu</span>
-    <nav class="mdl-navigation">
-     
-	 <!-- *************************
-	A FEW BUTTONS
-	**************************	-->	
-	
-	
-<div>&nbsp;</div>
-
-<button  type="button"  value="Submit" class="mdl-button mdl-js-button  mdl-button--colored hidden"  onclick="var layout = document.querySelector('.mdl-layout');
-layout.MaterialLayout.toggleDrawer();">change category</button>
-<button  type="button"  value="Submit" class="mdl-button mdl-js-button  mdl-button--colored"  onclick="quiz.restart(); ">restart</button>
-<button  type="button"  value="Submit" class="mdl-button mdl-js-button  mdl-button--colored"  onclick="location.reload(); ">reload</button>
-	 
-	 
-	  <ul class="demo-list-control mdl-list">
-	    
-	    <li class="mdl-list__item hidden">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons  mdl-list__item-icon">person</i>
-      Simplified-English
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Simplified-English">
-        <input type="checkbox" id="Simplified-English" class="mdl-checkbox__input" checked />
-      </label>
-    </span>
-  </li>
-    <li class="mdl-list__item hidden" >
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons  mdl-list__item-icon">translate</i>
-      Simplified-Pin1yin1
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Simplified-Pin1yin1">
-        <input type="checkbox" id="Simplified-Pin1yin1" class="mdl-checkbox__input" checked />
-      </label>
-    </span>
-  </li>
-  <li class="mdl-list__item  hidden">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons  mdl-list__item-icon">translate</i>
-      English-Pin1yin1
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="English-Pin1yin1">
-        <input type="checkbox" id="English-Pin1yin1" class="mdl-checkbox__input" checked />
-      </label>
-    </span>
-  </li>
-  <li class="mdl-list__item mdl-menu__item--full-bleed-divider hidden">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons  mdl-list__item-icon">translate</i>
-      Pin1yin1
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-2">
-        <input type="radio" id="list-option-2" class="mdl-radio__button" name="options" value="1" checked />
-      </label>
-    </span>
-  </li>
-  
-  <li class="mdl-list__item ">
-  <div class="mdl-layout-title">Question Settings</div>
-  </li>
-  
-  <li class="mdl-list__item ">
-    <span class="mdl-list__item-primary-content">
-	<i class="material-icons  mdl-list__item-icon">school</i>
-      learning mode
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="learning-mode">
-        <input type="checkbox" id="learning-mode" class="mdl-switch__input" checked />
-      </label>
-    </span>
-  </li>
-  
-    <li class="mdl-list__item ">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons  mdl-list__item-icon">touch_app</i>
-      click after wrong
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="clickAfterWrong">
-        <input type="checkbox" id="clickAfterWrong" class="mdl-switch__input" checked />
-      </label>
-    </span>
-  </li>
-  <li class="mdl-list__item mdl-menu__item--full-bleed-divider">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons  mdl-list__item-icon">shuffle</i>
-      Random
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="randomQuestions">
-        <input type="checkbox" id="randomQuestions" class="mdl-switch__input"  />
-      </label>
-    </span>
-  </li>
-  
-  <li class="mdl-list__item ">
-  <div class="mdl-layout-title">Character questions</div>
-  </li>
-      <li class="mdl-list__item ">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons  mdl-list__item-icon">rounded_corner</i>
-      show outline
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="showOutline">
-        <input type="checkbox" id="showOutline" class="mdl-switch__input" />
-      </label>
-    </span>
-  </li>
-  
-
-  
-    <li class="mdl-list__item ">
-    <span class="mdl-list__item-primary-content">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%;" >
-    <select class="mdl-textfield__input" id="characterQuestion" name="characterQuestion">
-      <option value="first" selected>only first</option>
-      <option value="all">All characters</option>
-      <option value="last">only last</option>
-      <option value="random">Random character</option>
-    </select>
-    <label class="mdl-textfield__label" for="characterQuestion" >Character Questions</label>
-  </div>
-    </span>
-  </li>
-  
-      <li class="mdl-list__item mdl-menu__item--full-bleed-divider">
-    <span class="mdl-list__item-primary-content">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%;" >
-    <select class="mdl-textfield__input" id="characterSize" name="characterSize" onchange="changeCharacterSize(this.value);">
-      <option value="150" selected>150</option>
-      <option value="200">200</option>
-      <option value="250">250</option>
-      <option value="300">300</option>
-      <option value="350">350</option>
-    </select>
-    <label class="mdl-textfield__label" for="characterSize" >Character Square Size</label>
-  </div>
-    </span>
-  </li>
-  
-
-
-
-<li class="mdl-list__item ">
-<div class="mdl-layout-title">Questions</div>
-</li>
-
-
-<li class="mdl-list__item ">
-<span class="mdl-chip" >
-    <span id="questionsListLength" class="mdl-chip__text" >Questions</span>
-</span>
-</li>
-<div>&nbsp;</div>
-
-
-<li class="mdl-list__item ">
-<label class="mdl-slider__label" for="questionSlider" >Start at </label>
-</li>
-<li class="mdl-list__item ">
-
-
-<input id="questionSlider" class="mdl-slider mdl-js-slider" type="range"
-  min="0" max="100" value="0" tabindex="0"  
-  oninput="quiz.sliderChange(this.value);" 
-  onchange="quiz.sliderChange(this.value);"  >
-  
-  <div class="mdl-badge mdl-badge--overlap " data-badge="0" id="questionSliderChip" style="margin-right:10px"></div>
- </li>
-</ul>
-
-
-
-<ul id="level-list" class="demo-list-control mdl-list hidden">
-</ul>
-
-<ul id="tag-list" class="demo-list-control mdl-list">
-</ul>
-
-
-
-    </nav>
-  </div>
-  <!--<main class="mdl-layout__content">
-    <div class="page-content">-->
-<div class="mdl-grid" >
-
 						<div class="mdl-cell mdl-cell--4-col">
 							<!--centrage-->
 							<div class="mdl-layout-spacer"></div>
 							<!--<h1>Quiz</h1>-->
 							<div id="mainCard" class="demo-card-square mdl-card mdl-shadow--2dp">
-
+								
 								<div id = "progressbar1" class = "mdl-progress mdl-js-progress"></div>
 								
-								<div class="mdl-card__supporting-text" style="text-align:left">
-										<audio id="audio"> <source id="audioSource" src="" type="audio/mpeg"></audio>
-										<i class="material-icons" onclick="document.getElementById('audio').play();">music_note</i>
-										<div id="username" style="text-align:right">username</div>
-										<div id="qlevel" style="text-align:right">qlevel</div>
+								<div class = "mdl-layout__content  ">
+									<div class = "mdl-grid mdl-card__supporting-text">
+										<div class = "mdl-cell mdl-cell--6-col  " >
+											<audio id="audioCsk" > 
+												
+											</audio>
+											<i class="material-icons" onclick="document.getElementById('audioCsk').play();">music_note</i>
+											
+											<audio id="audioAnki"> 
+											</audio>
+											<i class="material-icons" onclick="playAnkiAudio();">music_note</i>
+										</div>
+										
+										<div class = "mdl-cell mdl-cell--6-col  mdl-typography--text-right">
+											<div id="username" style="text-align:right">username</div>
+											<div id="qlevel" style="text-align:right">qlevel</div>
+										</div>
 									</div>
-									
+								</div>
 								
-									
+								
+								
+								
+								
+								
+								
 								
 								
 								<div class="mdl-card--expand" >
 									<h5  id="correct" style="text-align:center; display:none; color:green">correct</h2>
 									<h5  id="uncorrect" style="text-align:center; display:none; color:red">uncorrect</h2>
 									
-								<div class="mdl-card__supporting-text" style="text-align:center">
+									<div class="mdl-card__supporting-text" style="text-align:center">
 										<div id="hint"></div>
-
+										
 									</div>
 									
 									<!-- HANDWRITING TOOL -->
-								<div id="character-target-div" style="text-align:center; border:1px solid grey"></div>
-      
+									<div id="character-target-div" style="text-align:center; border:1px solid grey"></div>
+									
 									<h2  id="question" style="text-align:center; font-family: KaiTi, NotoSerifSC-Regular"><?php echo($row[$qid][2]); ?></h2>
 								</div>
-
+								
 								<div class="mdl-card__actions mdl-card--border">
-
+									
 									<form method="get" onsubmit="return checkInput();" action="#">
-
+										
 										<!-- HIDDEN FIELDS -->
 										<input id="userId" name="userId" style="display:none" class="mdl-textfield__input " type="text"  value="1">
-
-											<input id="success" name="success" style="display:none" class="mdl-textfield__input " type="text"  value="1">
-
-												<div style="word-wrap:normal;display:none" contenteditable="true" class="mdl-textfield__input" type="text" id="qanswer" >
-													<?php echo base64_encode($row[$qid][4]); ?></div>
-
-												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
-
-													<input name="qId" style="display:none" class="mdl-textfield__input " type="text" id="qId" value="<?php echo ($qid); ?>">
-
-														<input id="uanswer" name="uanswer" style="word-wrap:normal" class="mdl-textfield__input " type="text"  autofocus="true" autofocus onkeypress="return runScript(event);" >
-															<label id="answerLabel" class="mdl-textfield__label" for="uanswer">answer</label>
-
-														</div>
-
-
-														<button  type="button" onclick="quiz.checkInput();" value="Submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"  >
-															<i class="material-icons">keyboard_arrow_right</i>
-														</button>								
-
-
-													</form>
-													<!--<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-			  View Updates
-			</a>-->
-												</div>
-											</div><!-- end card -->
-
-
-
+										
+										<input id="success" name="success" style="display:none" class="mdl-textfield__input " type="text"  value="1">
+										
+										<div style="word-wrap:normal;display:none" contenteditable="true" class="mdl-textfield__input" type="text" id="qanswer" >
+										<?php echo base64_encode($row[$qid][4]); ?></div>
+										
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+											
+											<input name="qId" style="display:none" class="mdl-textfield__input " type="text" id="qId" value="<?php echo ($qid); ?>">
+											
+											<input id="uanswer" name="uanswer" style="word-wrap:normal" class="mdl-textfield__input " type="text"  autofocus="true" autofocus onkeypress="return runScript(event);" >
+											<label id="answerLabel" class="mdl-textfield__label" for="uanswer">answer</label>
+											
 										</div>
-
-										<div class="mdl-layout-spacer"></div>
-									</div> <!-- end grid -->
-
-
-									<!--</main>
-</div>  end page-content -->
-								
-
-
-
-
-
-</div> <!-- end layout -->
-
-<!-- *************************
-	LOADING THE QUESTIONS
-	FROM EXTERNAL FILE
-	**************************	-->
-
-
-
-
-
-<!-- Should work with an iframe but I didn't manage to get it to work 
-<object  id="questionssvg2" data="questions.svg"
-    width="300"
-    height="250"
-    type="image/svg+xml" style="display:block;background:green;"></object>
--->
-
-
-
-
-
-
-</body>
+										
+										
+										<button  type="button" onclick="quiz.checkInput();" value="Submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"  >
+											<i class="material-icons">keyboard_arrow_right</i>
+										</button>								
+										
+										
+									</form>
+									<!--<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+										View Updates
+									</a>-->
+								</div>
+							</div><!-- end card -->
+							
+							
+							
+						</div>
+						
+						<div class="mdl-layout-spacer"></div>
+					</div> <!-- end grid -->
+					
+					
+				</main>
+			</div>  <!--end page-content -->
+			
+			
+			
+			
+			
+			
+		</div> <!-- end layout -->
+		
+		<!-- *************************
+			LOADING THE QUESTIONS
+			FROM EXTERNAL FILE
+		**************************	-->
+		
+		
+		
+		
+		
+		<!-- Should work with an iframe but I didn't manage to get it to work 
+			<object  id="questionssvg2" data="questions.svg"
+			width="300"
+			height="250"
+			type="image/svg+xml" style="display:block;background:green;"></object>
+		-->
+		
+		
+		
+		
+		
+		
+	</body>
 </html>

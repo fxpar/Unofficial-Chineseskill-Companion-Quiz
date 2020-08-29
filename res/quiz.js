@@ -109,7 +109,8 @@ class Quiz {
             document.getElementById("answerLabel").textContent = this.answers[0][this.numAnswer];
             document.getElementById("uanswer").value = "";
 			//audio part
-			this.setAudio();
+			this.setCskAudio();
+			this.setAnkiAudio();
             if (document.getElementById('learning-mode').checked) {
                 document.getElementById("correct").textContent = this.answers[this.qid][this.numAnswer];
                 document.getElementById("correct").style.display = 'block';
@@ -129,10 +130,12 @@ class Quiz {
     }
 
 
-	setAudio(){
+	setCskAudio(){
 		if (this.answers[this.qid][8]){
 			var audioSource = this.answers[this.qid][8];
-			this.myAudio = document.getElementById("audio");
+			this.myAudio = document.getElementById("audioCsk");
+			// reset audio list to zero to avoid previous sound if no new sound is found
+			this.myAudio.setAttribute("src", "");
 			// document.getElementById("audioSource").setAttribute("src", "./res/sound/"+audioSource);
 			this.myAudio.setAttribute("src", "./res/sound/csk/"+audioSource);
 			this.myAudio.load();
@@ -140,6 +143,20 @@ class Quiz {
 		}
 		
 	}
+	
+	
+	setAnkiAudio(){
+		if (this.answers[this.qid][9]){
+			var audioSources = this.answers[this.qid][9];
+			var dataSrc = audioSources.replace(/\[sound:|\]| /g,"");
+			this.myAudio = document.getElementById("audioAnki");
+			this.myAudio.setAttribute("data-src", "");
+			this.myAudio.setAttribute("data-src", dataSrc+",''");
+		}
+		
+	}
+	
+	
 	showSuccess(){
 		console.log("**** attention");
 			document.getElementById("correct").textContent = '';
@@ -420,3 +437,31 @@ function changeCharacterSize(val){
  */}
 //var questions est chargé par un script dans le header
 //var strokesjson est chargé par un js script dans le header
+
+function playAnkiAudio(){
+		
+			//var audio = document.getElementById("audioAnki");
+			//this.myAudio = document.getElementById("audioAnki");
+			var audio = new Audio(),
+					i = 0;
+//var playlist = new Array('./res/sound/anki/4698b60c-e21e-56ab-ac9c-990774c668f2.mp3', './res/sound/anki/0bc51a4b-9160-56fe-b15e-b2e36c7f21b9.mp3', './res/sound/anki/7a777c54-c59d-5676-a3c5-4ce9a5387dfa.mp3','');
+	
+	var playlist = document.getElementById('audioAnki').getAttribute("data-src").split(',');
+			console.log(playlist);
+			// don't know how to stop the loop... so I break it with a last empty url in the playlist array
+				audio.addEventListener('ended', function () {
+					i = ++i < playlist.length ? i : 0;
+					console.log(i);
+					console.log('./res/sound/anki/'+playlist[i]);
+					audio.src = './res/sound/anki/'+playlist[i];
+					
+					audio.play();
+					
+				}, true);
+				audio.volume = 0.3;
+				audio.loop = false;
+				audio.src = './res/sound/anki/'+playlist[0];
+				audio.play();
+
+		
+	}
